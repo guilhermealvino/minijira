@@ -1,12 +1,13 @@
 package com.minijira.core.domain.repository;
 
 import com.minijira.core.domain.model.Atividade;
-import org.springframework.stereotype.Repository;
 
-@Repository
-public class AtividadeRepository {
+import java.time.LocalDateTime;
+import java.util.List;
 
-    Atividade salvar(Atividade atividade) {
-        return null;
-    }
+public interface AtividadeRepository {
+    Atividade salvar(Atividade atividade);
+    Atividade buscarPorId(Long id);
+    List<Atividade> buscarPorStatus(Atividade status);
+    List<Atividade> buscarPorData(LocalDateTime dataCriacao, LocalDateTime dataAtualizacao, LocalDateTime dataFinalizacao);
 }
